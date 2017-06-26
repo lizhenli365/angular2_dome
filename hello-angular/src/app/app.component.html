@@ -1,3 +1,16 @@
-<!--The whole content below can be removed with the new code.-->
-<p>{{title}}</p>
-<app-login></app-login>
+<h3 class="first">Basic</h3>
+<p-dataTable [value]="cars">
+  <p-header>学生成绩表</p-header>
+  <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+  <p-column field="name" header="Name"></p-column>
+  <p-column field="year" header="Year"></p-column>
+  <p-column field="brand" header="Brand"></p-column>
+  <p-column field="color" header="Color"></p-column>
+  <p-column  header="操作">
+    <ng-template let-car="rowData" pTemplate="body">
+      <button type="button" pButton icon="fa-search"></button>
+    </ng-template>
+  </p-column>
+</p-dataTable>
+
+

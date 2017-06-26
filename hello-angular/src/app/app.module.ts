@@ -1,23 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';//浏览器
-import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { ConfirmDialogModule } from 'primeng/primeng';
+import { GrowlModule } from 'primeng/primeng';
+
+import {DataTableModule,SharedModule} from 'primeng/primeng';
+
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import {AuthService} from "./core/auth.service";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    ConfirmDialogModule,
+    BrowserAnimationsModule,
+    GrowlModule,
+    DataTableModule,
+    SharedModule
   ],
-  providers: [
-    {provide: 'auth',  useClass: AuthService}
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
